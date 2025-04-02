@@ -5,6 +5,7 @@ import './ProfilePage.css';
 import ProfileBanner from './ProfileBanner';
 import TopPicksRow from './TopPicksRow';
 import ContinueWatching from './ContinueWatching';
+
 type ProfileType = 'recruiter' | 'developer' | 'stalker' | 'adventure';
 
 const ProfilePage: React.FC = () => {
@@ -15,14 +16,14 @@ const ProfilePage: React.FC = () => {
   const profile = ['recruiter', 'developer', 'stalker', 'adventure'].includes(profileName!)
     ? (profileName as ProfileType)
     : 'recruiter';
+
   return (
     <>
       <div
         className="profile-page"
         style={{ backgroundImage: `url(${backgroundGif})` }}
       >
-        <ProfileBanner
-        />
+        <ProfileBanner />
       </div>
       <TopPicksRow profile={profile} />
       <ContinueWatching profile={profile} />

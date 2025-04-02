@@ -1,10 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Projects.css';
 import { FaReact, FaNodeJs, FaAws, FaDatabase, FaDocker, FaAngular, FaGithub, FaGitlab, FaGoogle, FaJava, FaJenkins, FaMicrosoft, FaPython, FaVuejs } from 'react-icons/fa';
 import { SiRubyonrails, SiPostgresql, SiMongodb, SiMaterialdesign, SiHtml5, SiCss3, SiJquery, SiAwsamplify, SiFirebase, SiTerraform, SiArgo } from 'react-icons/si';
-import { Project } from '../types';
-import { getProjects } from '../queries/getProjects';
 import { GrDeploy, GrKubernetes } from "react-icons/gr";
+
+// Hardcode your project images (add these to src/images/)
+import vesselTrackingImage from '../images/alchemist.jpg';
+import salesAnalysisImage from '../images/allmeno.png';
+import maskWatchImage from '../images/chris.jpg';
+import pawPalsImage from '../images/Hotelcalifornia.jpg';
+import triviaTitansImage from '../images/atomic_habits.jpg';
 
 const techIcons: { [key: string]: JSX.Element } = {
   "ReactJS": <FaReact />,
@@ -59,20 +64,42 @@ const techIcons: { [key: string]: JSX.Element } = {
   'JQuery': <SiJquery />,
 };
 
+// Hardcode your projects
+const projects = [
+  {
+    title: "Vessel Tracking & Sustainability Dashboard",
+    description: "Developed a company-wide dashboard to track vessels coated by the company, enabling real-time monitoring and operational insights. Includes a dedicated page for sustainability metrics showing tons of CO2 saved.",
+    techUsed: "React.js, Express.js, SQL, AWS S3",
+    image: { url: vesselTrackingImage }
+  },
+  {
+    title: "Sales Analysis",
+    description: "Developed interactive sales dashboards in Microsoft Power BI to visualize financial performance and product sales across geographic regions over the past decade.",
+    techUsed: "Microsoft Power BI, SQL",
+    image: { url: salesAnalysisImage }
+  },
+  {
+    title: "Mask Watch",
+    description: "Built a serverless application using AWS services to analyze images for individuals wearing face masks, with automated image processing and label generation.",
+    techUsed: "AWS Lambda, AWS Rekognition, AWS S3, Python",
+    image: { url: maskWatchImage }
+  },
+  {
+    title: "PawPals",
+    description: "Designed and implemented a pet-related web application with a homepage and related pages, focusing on code quality and database performance.",
+    techUsed: "Java, Spring Boot, MySQL, React",
+    image: { url: pawPalsImage }
+  },
+  {
+    title: "Trivia Titans",
+    description: "Developed an engaging online quiz game with a dynamic game lobby, real-time leaderboard, and user-friendly interface for organizing and playing quizzes.",
+    techUsed: "AWS Lambda, React, DynamoDB, API Gateway",
+    image: { url: triviaTitansImage }
+  }
+];
 
 const Projects: React.FC = () => {
-  const [projects, setProjects] = useState<Project[]>([])
-  
-  useEffect(() => { 
-    async function fetchProjects() {
-      const data = await getProjects();
-      setProjects(data);
-    }
-    
-    fetchProjects()
-  }, [])
-  
-  if (projects.length === 0) return <div>Loading...</div>;
+  if (projects.length === 0) return <div>No projects available.</div>;
 
   return (
     <div className="projects-container">

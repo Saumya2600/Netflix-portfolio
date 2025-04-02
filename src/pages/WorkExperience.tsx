@@ -1,29 +1,55 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import { MdOutlineWork as WorkIcon } from 'react-icons/md';
 import { IoSchool as SchoolIcon } from 'react-icons/io5';
 import { FaStar as StarIcon } from 'react-icons/fa';
 import './WorkExperience.css';
-import { TimelineItem } from '../types';
-import { getTimeline } from '../queries/getTimeline';
 
+// Hardcode Saumya Shah's work experience and education timeline
+const timeLineData = [
+  {
+    timelineType: "work",
+    title: "Full Stack Developer",
+    name: "Graphite Innovation & Technology",
+    dateRange: "Jan 2024 - Mar 2025",
+    techStack: "React.js, Express.js, AWS, PostgreSQL, MySQL, Python",
+    summaryPoints: "Developed a company-wide dashboard for real-time data visualization using React.js and Express.js, hosted on AWS Cloud. Performed vessel analysis with Python scripts for data cleaning and analysis. Managed relational databases with optimized queries and automated data workflows."
+  },
+  {
+    timelineType: "education",
+    name: "Dalhousie University",
+    title: "Master of Applied Computer Science (GPA: 3.78/4.30)",
+    dateRange: "Jan 2023 - Apr 2024",
+    summaryPoints: "Coursework: Advanced Topics in Software Development, Data Management Warehousing & Management, Advanced Topics in Cloud Computing, Serverless Computing, UI/UX, Human-Computer Interaction."
+  },
+  {
+    timelineType: "work",
+    title: "Associate Software Engineer",
+    name: "Accenture Solutions Pvt. Ltd.",
+    dateRange: "Nov 2021 - Sep 2022",
+    techStack: "Java",
+    summaryPoints: "Contributed to project tasks using Java programming. Collaborated with cross-functional teams in an agile environment to deliver high-quality solutions. Gained experience in agile methodologies and best practices for software development."
+  },
+  {
+    timelineType: "work",
+    title: "Intern",
+    name: "Suven Consultants & Technology Pvt. Ltd.",
+    dateRange: "Sep 2020 - Nov 2020",
+    techStack: "Dialogflow",
+    summaryPoints: "Designed and deployed a chatbot using Dialogflow, enhancing user interactions and automating processes. Integrated the chatbot with Facebook Messenger to expand accessibility."
+  },
+  {
+    timelineType: "education",
+    name: "Indus University",
+    title: "Bachelor of Computer Engineering (CGPA: 9.54/10.00)",
+    dateRange: "Aug 2017 - Aug 2021",
+    summaryPoints: "Coursework: Data Structures, Object-Oriented Programming, Software Engineering, Operating Systems, Computer Networks, Web Development, Database Management System, Data Analysis."
+  }
+];
 
 const WorkExperience: React.FC = () => {
-
-  const [timeLineData, setTimeLineData] = useState<TimelineItem[] | null>(null);
-
-  useEffect(() => {
-    async function fetchTimelineItem() {
-      const data = await getTimeline();
-      setTimeLineData(data);
-    }
-    fetchTimelineItem();
-  }, []);
-
-
-  if (!timeLineData) return <div>Loading...</div>;
-  console.log("🚀 ~ timeLineData:", timeLineData)
+  if (!timeLineData || timeLineData.length === 0) return <div>No timeline data available.</div>;
 
   return (
     <>
@@ -40,7 +66,7 @@ const WorkExperience: React.FC = () => {
                 ? index === 0
                   ? { background: 'rgb(33, 150, 243)', color: '#fff' }
                   : { background: 'rgb(240, 240, 240)', color: '#fff' }
-                : { background: 'rgb(255, 224, 230)', color: '#fff' } // Lighter red for education
+                : { background: 'rgb(255, 224, 230)', color: '#fff' }
             }
             contentArrowStyle={
               item.timelineType === "work"
@@ -51,7 +77,7 @@ const WorkExperience: React.FC = () => {
             iconStyle={
               item.timelineType === "work"
                 ? { background: 'rgb(33, 150, 243)', color: '#fff' }
-                : { background: 'rgb(255, 160, 200)', color: '#fff' } // Softer red for education icon
+                : { background: 'rgb(255, 160, 200)', color: '#fff' }
             }
             icon={item.timelineType === "work" ? <WorkIcon /> : <SchoolIcon />}
           >
