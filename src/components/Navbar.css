@@ -1,5 +1,5 @@
 /* Navbar.css */
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 /* Main Navbar Styling */
 .navbar {
   display: flex;
@@ -24,11 +24,22 @@
   align-items: center;
 }
 
-.navbar-logo img {
-  height: 30px;
+.navbar-logo {
   margin-right: 30px;
   margin-left: 10px;
   margin-top: 5px;
+}
+
+.navbar-logo-text {
+  font-size: 1.875rem; /* Matches the height of the original logo (30px) */
+  font-family: 'Bebas Neue', sans-serif; /* Bold, Netflix-like font */
+  font-weight: 700;
+  color: #e50914; /* Netflix red */
+  letter-spacing: 2px; /* Matches the spacing in the image */
+  text-transform: uppercase; /* Ensure all caps */
+  transform: skewX(-10deg); /* Rightward slant to match the image */
+  display: inline-block;
+  line-height: 1; /* Ensure the text height matches the original logo */
 }
 
 /* Navbar Links */
@@ -70,15 +81,18 @@
 
 /* Mobile-specific styling */
 @media (max-width: 768px) {
-  .navbar-logo img {
-    height: 20px;
+  .navbar-logo {
     margin-right: auto;
   }
+
+  .navbar-logo-text {
+    font-size: 1.25rem; /* Matches the height of the original logo (20px) on mobile */
+  }
+
   .profile-icon {
     width: 24px;
     height: 24px;
   }
-
 
   /* Hide Navbar Links in Mobile */
   .navbar-links {
@@ -137,9 +151,20 @@
     transform: translateX(0);
   }
 
-  .sidebar-logo img {
-    height: 30px;
+  .sidebar-logo {
     margin-bottom: 20px;
+  }
+
+  .sidebar-logo-text {
+    font-size: 1.875rem; /* Matches the height of the original logo (30px) in the sidebar */
+    font-family: 'Bebas Neue', sans-serif; /* Bold, Netflix-like font */
+    font-weight: 700;
+    color: #e50914; /* Netflix red */
+    letter-spacing: 2px; /* Matches the spacing in the image */
+    text-transform: uppercase; /* Ensure all caps */
+    transform: skewX(-10deg); /* Rightward slant to match the image */
+    display: inline-block;
+    line-height: 1; /* Ensure the text height matches the original logo */
   }
 
   .sidebar ul {
@@ -147,6 +172,7 @@
     padding: 0;
     margin: 0;
   }
+
   .sidebar ul li {
     padding: 15px 20px;
     display: flex;
@@ -161,12 +187,6 @@
     display: flex;
     align-items: center;
     gap: 8px;
-  }
-
-  /* Close button inside the sidebar */
-  .hamburger-icon {
-    font-size: 1.5rem;
-    margin-right: 5px;
   }
 
   /* Sidebar adjustments */

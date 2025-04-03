@@ -1,38 +1,44 @@
-.netflix-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #141414;
-  overflow: hidden;
-}
-
-.netflix-logo {
-  width: 500px;
-  height: auto;
-  opacity: 0;
-  transform: scale(0.8);
-  animation: fadeIn 0.5s forwards ease-in;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: scale(1);
+  .netflix-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #141414;
+    overflow: hidden;
   }
-}
 
-.animate.netflix-logo {
-  animation: zoomOut 3s forwards ease-in-out;
-}
-
-@keyframes zoomOut {
-  0%, 80% {
-    transform: scale(0.8);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(3);
+  .netflix-title {
+    font-size: 5rem; /* Adjust size to match the original logo's appearance */
+    font-family: 'Bebas Neue', sans-serif; /* Netflix uses a bold font like Bebas Neue; you can adjust this */
+    font-weight: 700;
+    color: #e50914; /* Netflix red */
+    letter-spacing: 2px; /* Add some spacing for a logo-like feel */
+    text-transform: uppercase; /* Match the all-caps style of the original */
     opacity: 0;
+    transform: scale(0.8);
+    animation: fadeIn 0.5s forwards ease-in;
+    text-align: center;
+    margin: 0; /* Remove default margins for h1 */
   }
-}
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate.netflix-title {
+    animation: zoomOut 3s forwards ease-in-out;
+  }
+
+  @keyframes zoomOut {
+    0%, 80% {
+      transform: scale(0.8);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(3);
+      opacity: 0;
+    }
+  }
