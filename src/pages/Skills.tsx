@@ -1,22 +1,42 @@
 import React from 'react';
 import './Skills.css';
 import { CgCPlusPlus } from "react-icons/cg";
-import { FaReact, FaNodeJs,FaGit, FaAws, FaDocker, FaJava } from 'react-icons/fa';
-import { SiRubyonrails,SiMongodb ,SiTypescript,SiPython , SiPostgresql, SiMysql, SiKubernetes, SiGooglecloud, SiSpringboot, SiPhp, SiNetlify, SiHeroku, SiHtml5, SiCss3, SiRabbitmq, SiImessage,SiTableau } from 'react-icons/si';
+import { IoLogoHtml5 } from "react-icons/io";
+import { MdCss } from "react-icons/md";
+import { DiRedis } from "react-icons/di";
+import { TbBrandReactNative } from "react-icons/tb";
+import { VscAzure,VscVscode } from "react-icons/vsc";
+import { AiOutlineConsoleSql } from "react-icons/ai";
+import { FaReact, FaPython, FaNode,FaGit,FaAngular,FaNodeJs, FaAws,FaJenkins, FaDocker, FaJava,FaMicrosoft,FaJira } from 'react-icons/fa';
+import { SiRubyonrails,SiPostman ,SiMongodb , SiTypscript ,SiAmazondynamodb , SiPostgresql, SiMysql, SiKubernetes, SiGooglecloud, SiSpringboot, SiPhp, SiNetlify, SiHeroku, SiCss3, SiRabbitmq, SiImessage,SiTableau, SiTypescript } from 'react-icons/si';
 
 const iconMap: { [key: string]: JSX.Element } = {
   SiRubyonrails: <SiRubyonrails />,
-  FaNodeJs: <FaNodeJs />,
+  FaNode: <FaNode />,
+  TbBrandReactNative: <TbBrandReactNative />,
   CgCPlusPlus: <CgCPlusPlus />,
   SiSpringboot: <SiSpringboot />,
+  FaJira: <FaJira />,
+  FaMicrosoft: <FaMicrosoft />,
+  FaJenkins: <FaJenkins />, 
+  VscVscode: <VscVscode />,
+  AiOutlineConsoleSql: <AiOutlineConsoleSql />,
   FaJava: <FaJava />,
+  FaNodeJs: <FaNodeJs  />,
+  FaAngular: <FaAngular  />,
+  DiRedis: <DiRedis />,
   SiPhp: <SiPhp />,
+  SiAmazondynamodb: <SiAmazondynamodb  />,
+  VscAzure: <VscAzure />,
+  IoLogoHtml5: <IoLogoHtml5 />,
+  MdCss: <MdCss />,
   FaReact: <FaReact />,
+  SiPostman: <SiPostman />,
   FaGit: <FaGit  />,
   SiMongodb: <SiMongodb  />,
   SiTypescript: <SiTypescript />,
   FaAws: <FaAws />,
-  SiPython: <SiPython />,
+  FaPython: <FaPython />,
   SiTableau: <SiTableau />,
   FaDocker: <FaDocker />,
   SiPostgresql: <SiPostgresql />,
@@ -36,7 +56,7 @@ const skillsData = [
     category: "Programming Languages",
     name: "JavaScript",
     description: "Experienced in building dynamic web applications and APIs.",
-    icon: "FaNodeJs" // Using Node.js icon as a proxy for JavaScript
+    icon: "FaNode" // Using Node.js icon as a proxy for JavaScript
   },
   {
     category: "Programming Languages",
@@ -54,7 +74,7 @@ const skillsData = [
     category: "Programming Languages",
     name: "Python",
     description: "Used for data analysis, automation, and serverless applications.",
-    icon: "SiPython " // Note: FaPython isn't in iconMap, but you can add it or use a different icon
+    icon: "FaPython" 
   },
   {
     category: "Programming Languages",
@@ -73,13 +93,13 @@ const skillsData = [
     category: "Web & App Development",
     name: "React Native",
     description: "Developed cross-platform mobile applications.",
-    icon: "FaReact"
+    icon: "FaReTbBrandReactNative"
   },
   {
     category: "Web & App Development",
     name: "Node.js",
     description: "Created RESTful APIs and backend services with Express.js.",
-    icon: "FaNodeJs"
+    icon: "FaNode"
   },
   {
     category: "Web & App Development",
@@ -103,13 +123,13 @@ const skillsData = [
     category: "Web & App Development",
     name: "HTML",
     description: "Experienced in structuring web content.",
-    icon: "SiHtml5"
+    icon: "IoLogoHtml5"
   },
   {
     category: "Web & App Development",
     name: "CSS",
     description: "Skilled in styling and responsive design.",
-    icon: "SiCss3"
+    icon: "MdCss"
   },
   // Cloud & DevOps
   {
@@ -128,7 +148,7 @@ const skillsData = [
     category: "Cloud & DevOps",
     name: "Azure",
     description: "Explored cloud services for application deployment.",
-    icon: "FaMicrosoft" // Note: FaMicrosoft isn't in iconMap, but you can add it
+    icon: "VscAzure" // Note: FaMicrosoft isn't in iconMap, but you can add it
   },
   {
     category: "Cloud & DevOps",
@@ -159,7 +179,7 @@ const skillsData = [
     category: "Databases",
     name: "SQL Server",
     description: "Managed relational databases for enterprise applications.",
-    icon: "SiMysql" // Using MySQL icon as a proxy
+    icon: "AiOutlineConsoleSql" // Using MySQL icon as a proxy
   },
   {
     category: "Databases",
@@ -171,7 +191,7 @@ const skillsData = [
     category: "Databases",
     name: "DynamoDB",
     description: "Used in serverless applications for high scalability.",
-    icon: "SiPostgresql" // Using PostgreSQL icon as a proxy
+    icon: "SiAmazondynamodb" // Using PostgreSQL icon as a proxy
   },
   {
     category: "Databases",
@@ -183,7 +203,7 @@ const skillsData = [
     category: "Databases",
     name: "Redis",
     description: "Utilized for caching and improving application performance.",
-    icon: "SiRedis" // Note: SiRedis isn't in iconMap, but you can add it
+    icon: "DiRedis" // Note: SiRedis isn't in iconMap, but you can add it
   },
   // Tools and Technologies
   {
@@ -202,13 +222,13 @@ const skillsData = [
     category: "Tools and Technologies",
     name: "Git",
     description: "Managed version control for collaborative projects.",
-    icon: "FaGitAlt"
+    icon: "FaGit"
   },
   {
     category: "Tools and Technologies",
     name: "Postman",
     description: "Tested and debugged APIs during development.",
-    icon: "FaGitAlt" // Using Git icon as a placeholder
+    icon: "SiPostman" // Using Git icon as a placeholder
   },
   {
     category: "Tools and Technologies",
@@ -220,13 +240,13 @@ const skillsData = [
     category: "Tools and Technologies",
     name: "VS Code",
     description: "Primary IDE for development and debugging.",
-    icon: "FaGitAlt" // Using Git icon as a placeholder
+    icon: "VscVscode" // Using Git icon as a placeholder
   },
   {
     category: "Tools and Technologies",
     name: "Jira",
     description: "Managed project tasks and workflows in agile teams.",
-    icon: "FaGitAlt" // Using Git icon as a placeholder
+    icon: "FaJira" // Using Git icon as a placeholder
   }
 ];
 
