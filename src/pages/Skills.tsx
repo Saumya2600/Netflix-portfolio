@@ -1,17 +1,23 @@
 import React from 'react';
 import './Skills.css';
-import { FaReact, FaNodeJs, FaAws, FaDocker, FaGitAlt, FaJava } from 'react-icons/fa';
-import { SiRubyonrails, SiTypescript, SiPostgresql, SiMysql, SiKubernetes, SiGooglecloud, SiSpringboot, SiPhp, SiNetlify, SiHeroku, SiHtml5, SiCss3, SiRabbitmq, SiImessage } from 'react-icons/si';
+import { CgCPlusPlus } from "react-icons/cg";
+import { FaReact, FaNodeJs,FaGit, FaAws, FaDocker, FaJava } from 'react-icons/fa';
+import { SiRubyonrails,SiMongodb ,SiTypescript,SiPython , SiPostgresql, SiMysql, SiKubernetes, SiGooglecloud, SiSpringboot, SiPhp, SiNetlify, SiHeroku, SiHtml5, SiCss3, SiRabbitmq, SiImessage,SiTableau } from 'react-icons/si';
 
 const iconMap: { [key: string]: JSX.Element } = {
   SiRubyonrails: <SiRubyonrails />,
   FaNodeJs: <FaNodeJs />,
+  CgCPlusPlus: <CgCPlusPlus />,
   SiSpringboot: <SiSpringboot />,
   FaJava: <FaJava />,
   SiPhp: <SiPhp />,
   FaReact: <FaReact />,
+  FaGit: <FaGit  />,
+  SiMongodb: <SiMongodb  />,
   SiTypescript: <SiTypescript />,
   FaAws: <FaAws />,
+  SiPython: <SiPython />,
+  SiTableau: <SiTableau />,
   FaDocker: <FaDocker />,
   SiPostgresql: <SiPostgresql />,
   SiMysql: <SiMysql />,
@@ -48,13 +54,13 @@ const skillsData = [
     category: "Programming Languages",
     name: "Python",
     description: "Used for data analysis, automation, and serverless applications.",
-    icon: "FaPython" // Note: FaPython isn't in iconMap, but you can add it or use a different icon
+    icon: "SiPython " // Note: FaPython isn't in iconMap, but you can add it or use a different icon
   },
   {
     category: "Programming Languages",
     name: "C++",
     description: "Familiar with object-oriented programming and system-level development.",
-    icon: "FaJava" // Using Java icon as a placeholder; you can add a C++ icon
+    icon: "CgCPlusPlus" // Using Java icon as a placeholder; you can add a C++ icon
   },
   // Web & App Development
   {
@@ -190,7 +196,7 @@ const skillsData = [
     category: "Tools and Technologies",
     name: "Tableau",
     description: "Familiar with data visualization and business intelligence.",
-    icon: "FaMicrosoft" // Using Microsoft icon as a proxy
+    icon: "SiTableau" // Using Microsoft icon as a proxy
   },
   {
     category: "Tools and Technologies",
