@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { FaHome, FaBriefcase, FaTools, FaProjectDiagram, FaEnvelope } from 'react-icons/fa'; // Import icons
+import { FaHome, FaBriefcase, FaTools, FaProjectDiagram, FaEnvelope } from 'react-icons/fa';
 import './Navbar.css';
 import blueImage from '../images/blue.png';
+
+// Wrapper component to satisfy TypeScript
+const IconWrapper: React.FC<{ icon: React.ComponentType }> = ({ icon: Icon }) => <Icon />;
 
 const Navbar: React.FC = () => {
   const location = useLocation();
@@ -44,7 +47,6 @@ const Navbar: React.FC = () => {
           </ul>
         </div>
         <div className="navbar-right">
-          {/* Hamburger menu for mobile */}
           <div className="hamburger" onClick={toggleSidebar}>
             <div></div>
             <div></div>
@@ -54,20 +56,18 @@ const Navbar: React.FC = () => {
         </div>
       </nav>
 
-      {/* Sidebar Overlay */}
       <div className={`sidebar-overlay ${isSidebarOpen ? 'open' : ''}`} onClick={closeSidebar}></div>
 
-      {/* Sidebar (only visible on mobile) */}
       <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
         <div className="sidebar-logo">
           <span className="sidebar-logo-text">Saumya Shah</span>
         </div>
         <ul>
-          <li><Link to="/browse" onClick={closeSidebar}><FaHome /> Home</Link></li>
-          <li><Link to="/work-experience" onClick={closeSidebar}><FaBriefcase /> Professional</Link></li>
-          <li><Link to="/skills" onClick={closeSidebar}><FaTools /> Skills</Link></li>
-          <li><Link to="/projects" onClick={closeSidebar}><FaProjectDiagram /> Projects</Link></li>
-          <li><Link to="/contact-me" onClick={closeSidebar}><FaEnvelope /> Hire Me</Link></li>
+          <li><Link to="/browse" onClick={closeSidebar}><IconWrapper icon={FaHome} /> Home</Link></li>
+          <li><Link to="/work-experience" onClick={closeSidebar}><IconWrapper icon={FaBriefcase} /> Professional</Link></li>
+          <li><Link to="/skills" onClick={closeSidebar}><IconWrapper icon={FaTools} /> Skills</Link></li>
+          <li><Link to="/projects" onClick={closeSidebar}><IconWrapper icon={FaProjectDiagram} /> Projects</Link></li>
+          <li><Link to="/contact-me" onClick={closeSidebar}><IconWrapper icon={FaEnvelope} /> Hire Me</Link></li>
         </ul>
       </div>
     </>

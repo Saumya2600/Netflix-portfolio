@@ -8,11 +8,12 @@ import { TbBrandReactNative } from "react-icons/tb";
 import { VscAzure,VscVscode } from "react-icons/vsc";
 import { AiOutlineConsoleSql } from "react-icons/ai";
 import { FaReact, FaPython, FaNode,FaGit,FaAngular,FaNodeJs, FaAws,FaJenkins, FaDocker, FaJava,FaMicrosoft,FaJira } from 'react-icons/fa';
-import { SiRubyonrails,SiPostman ,SiMongodb , SiTypscript ,SiAmazondynamodb , SiPostgresql, SiMysql, SiKubernetes, SiGooglecloud, SiSpringboot, SiPhp, SiNetlify, SiHeroku, SiCss3, SiRabbitmq, SiImessage,SiTableau, SiTypescript } from 'react-icons/si';
+import { SiRubyonrails,SiVercel ,SiPostman ,SiMongodb ,SiTypescript ,SiAmazondynamodb , SiPostgresql, SiMysql, SiKubernetes, SiGooglecloud, SiSpringboot, SiPhp, SiNetlify, SiHeroku, SiCss3, SiRabbitmq, SiImessage,SiTableau } from 'react-icons/si';
 
 const iconMap: { [key: string]: JSX.Element } = {
   SiRubyonrails: <SiRubyonrails />,
   FaNode: <FaNode />,
+  SiVercel: <SiVercel  />,
   TbBrandReactNative: <TbBrandReactNative />,
   CgCPlusPlus: <CgCPlusPlus />,
   SiSpringboot: <SiSpringboot />,
@@ -34,7 +35,7 @@ const iconMap: { [key: string]: JSX.Element } = {
   SiPostman: <SiPostman />,
   FaGit: <FaGit  />,
   SiMongodb: <SiMongodb  />,
-  SiTypescript: <SiTypescript />,
+  SiTypescript: <SiTypescript  />,
   FaAws: <FaAws />,
   FaPython: <FaPython />,
   SiTableau: <SiTableau />,
@@ -79,7 +80,7 @@ const skillsData = [
   {
     category: "Programming Languages",
     name: "C++",
-    description: "Familiar with object-oriented programming and system-level development.",
+    description: "Proficient with object-oriented programming and system-level development.",
     icon: "CgCPlusPlus" // Using Java icon as a placeholder; you can add a C++ icon
   },
   // Web & App Development
@@ -229,6 +230,12 @@ const skillsData = [
     name: "Postman",
     description: "Tested and debugged APIs during development.",
     icon: "SiPostman" // Using Git icon as a placeholder
+  },
+  {
+    category: "Tools and Technologies",
+    name: "Vercel",
+    description: "Hosted various projects on it and have in depth knowledge.",
+    icon: "SiVercel" // Using Microsoft icon as a proxy
   },
   {
     category: "Tools and Technologies",
