@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { FaHome, FaBriefcase, FaTools, FaProjectDiagram, FaEnvelope } from 'react-icons/fa';
+import { 
+  FaHome, 
+  FaBriefcase, 
+  FaTools, 
+  FaProjectDiagram, 
+  FaEnvelope 
+} from 'react-icons/fa';
 import './Navbar.css';
 import blueImage from '../images/blue.png';
-
-// Wrapper component to satisfy TypeScript
-const IconWrapper: React.FC<{ icon: React.ComponentType }> = ({ icon: Icon }) => <Icon />;
 
 const Navbar: React.FC = () => {
   const location = useLocation();
@@ -14,25 +17,18 @@ const Navbar: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const profileImage = location.state?.profileImage || blueImage;
 
-  const handleScroll = () => {
-    setIsScrolled(window.scrollY > 80);
-  };
-
   useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 80);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
-
-  const closeSidebar = () => {
-    setIsSidebarOpen(false);
-  };
+  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+  const closeSidebar = () => setIsSidebarOpen(false);
 
   return (
     <>
+      {/* Top Navigation Bar */}
       <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="navbar-left">
           <Link to="/" className="navbar-logo">
@@ -47,27 +43,56 @@ const Navbar: React.FC = () => {
           </ul>
         </div>
         <div className="navbar-right">
-          <div className="hamburger" onClick={toggleSidebar}>
+          <button className="hamburger" onClick={toggleSidebar} aria-label="Toggle sidebar">
             <div></div>
             <div></div>
             <div></div>
-          </div>
-          <img src={profileImage} alt="Profile" className="profile-icon" onClick={() => { navigate('/browse') }} />
+          </button>
+          <img 
+            src={profileImage} 
+            alt="Profile" 
+            className="profile-icon" 
+            onClick={() => navigate('/browse')} 
+          />
         </div>
       </nav>
 
-      <div className={`sidebar-overlay ${isSidebarOpen ? 'open' : ''}`} onClick={closeSidebar}></div>
+      {/* Sidebar Navigation */}
+      <div 
+        className={`sidebar-overlay ${isSidebarOpen ? 'open' : ''}`} 
+        onClick={closeSidebar}
+      ></div>
 
       <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
         <div className="sidebar-logo">
           <span className="sidebar-logo-text">Saumya Shah</span>
         </div>
         <ul>
-          <li><Link to="/browse" onClick={closeSidebar}><IconWrapper icon={FaHome} /> Home</Link></li>
-          <li><Link to="/work-experience" onClick={closeSidebar}><IconWrapper icon={FaBriefcase} /> Professional</Link></li>
-          <li><Link to="/skills" onClick={closeSidebar}><IconWrapper icon={FaTools} /> Skills</Link></li>
-          <li><Link to="/projects" onClick={closeSidebar}><IconWrapper icon={FaProjectDiagram} /> Projects</Link></li>
-          <li><Link to="/contact-me" onClick={closeSidebar}><IconWrapper icon={FaEnvelope} /> Hire Me</Link></li>
+          <li>
+            <Link to="/browse" onClick={closeSidebar}>
+              <FaHome /> Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/work-experience" onClick={closeSidebar}>
+              <FaBriefcase /> Professional
+            </Link>
+          </li>
+          <li>
+            <Link to="/skills" onClick={closeSidebar}>
+              <FaTools /> Skills
+            </Link>
+          </li>
+          <li>
+            <Link to="/projects" onClick={closeSidebar}>
+              <FaProjectDiagram /> Projects
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact-me" onClick={closeSidebar}>
+              <FaEnvelope /> Hire Me
+            </Link>
+          </li>
         </ul>
       </div>
     </>

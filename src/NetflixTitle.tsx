@@ -10,7 +10,7 @@ const NetflixTitle = () => {
   const handlePlaySound = () => {
     const audio = new Audio(netflixSound);
     audio.play().catch(error => console.error("Audio play error:", error));
-    setIsClicked(true); // Starts animation after clicking
+    setIsClicked(true); // Starts animation after clickings
   };
 
   useEffect(() => {

@@ -3,10 +3,10 @@
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
-    "skipLibCheck": true, // Skip type checking of declaration files
+    "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": false, // Disable strict mode to relax type checking (or keep true and adjust specific options below)
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
@@ -14,10 +14,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx", // Ensure JSX is handled correctly
+    "jsx": "react-jsx",
+    "types": ["react", "react-dom"],
     "baseUrl": "src",
     "paths": {
-      "*": ["*"]
+      "@/*": ["./src/*"]
     }
   },
   "include": ["src"],

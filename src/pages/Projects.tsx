@@ -11,57 +11,64 @@ import maskWatchImage from '../images/chris.jpg';
 import pawPalsImage from '../images/Hotelcalifornia.jpg';
 import triviaTitansImage from '../images/atomic_habits.jpg';
 
-const techIcons: { [key: string]: JSX.Element } = {
-  "ReactJS": <FaReact />,
-  "NodeJS": <FaNodeJs />,
-  "AWS": <FaAws />,
-  "PostgreSQL": <SiPostgresql />,
-  "MongoDB": <SiMongodb />,
-  "Ruby On Rails": <SiRubyonrails />,
-  "Material UI": <SiMaterialdesign />,
-  "HTML5": <SiHtml5 />,
-  "CSS3": <SiCss3 />,
-  "jQuery": <SiJquery />,
-  "AWS-ECS": <SiAwsamplify />,
-  'Cognito': <FaAws />,
-  'Lambda': <FaAws />,
-  'ECS': <FaAws />,
-  'Jenkins': <FaJenkins />,
-  'Docker': <FaDocker />,
-  'GraphQL': <FaDatabase />,
-  'CI/CD': <FaGitlab />,
-  'GitLab': <FaGitlab />,
-  'GitHub': <FaGithub />,
-  'Heroku': <GrDeploy />,
-  'Netlify': <GrDeploy />,
-  'Firebase': <SiFirebase />,
-  'GCP': <FaGoogle />,
-  'Azure': <FaMicrosoft />,
-  'Kubernetes': <GrKubernetes />,
-  'Terraform': <SiTerraform />,
-  'ArgoCD': <SiArgo />,
-  'Java': <FaJava />,
-  'Spring Boot': <FaJava />,
-  'Python': <FaPython />,
-  'Node.js': <FaNodeJs />,
-  'Express.js': <FaNodeJs />,
-  'Hibernate': <FaJava />,
-  'Maven': <FaJava />,
-  'Gradle': <FaJava />,
-  'JUnit': <FaJava />,
-  'Mockito': <FaJava />,
-  'Jest': <FaReact />,
-  'React': <FaReact />,
-  'Angular': <FaAngular />,
-  'Vue.js': <FaVuejs />,
-  'Next.js': <FaReact />,
-  'Gatsby': <FaReact />,
-  'Nuxt.js': <FaVuejs />,
-  'Redux': <FaReact />,
-  'Vuex': <FaVuejs />,
-  'Tailwind CSS': <SiCss3 />,
-  'Bootstrap': <SiCss3 />,
-  'JQuery': <SiJquery />,
+// Create a type-safe tech icons mapping
+const techIcons: Record<string, React.ComponentType> = {
+  "ReactJS": FaReact,
+  "NodeJS": FaNodeJs,
+  "AWS": FaAws,
+  "PostgreSQL": SiPostgresql,
+  "MongoDB": SiMongodb,
+  "Ruby On Rails": SiRubyonrails,
+  "Material UI": SiMaterialdesign,
+  "HTML5": SiHtml5,
+  "CSS3": SiCss3,
+  "jQuery": SiJquery,
+  "AWS-ECS": SiAwsamplify,
+  'Cognito': FaAws,
+  'Lambda': FaAws,
+  'ECS': FaAws,
+  'Jenkins': FaJenkins,
+  'Docker': FaDocker,
+  'GraphQL': FaDatabase,
+  'CI/CD': FaGitlab,
+  'GitLab': FaGitlab,
+  'GitHub': FaGithub,
+  'Heroku': GrDeploy,
+  'Netlify': GrDeploy,
+  'Firebase': SiFirebase,
+  'GCP': FaGoogle,
+  'Azure': FaMicrosoft,
+  'Kubernetes': GrKubernetes,
+  'Terraform': SiTerraform,
+  'ArgoCD': SiArgo,
+  'Java': FaJava,
+  'Spring Boot': FaJava,
+  'Python': FaPython,
+  'Node.js': FaNodeJs,
+  'Express.js': FaNodeJs,
+  'Hibernate': FaJava,
+  'Maven': FaJava,
+  'Gradle': FaJava,
+  'JUnit': FaJava,
+  'Mockito': FaJava,
+  'Jest': FaReact,
+  'React': FaReact,
+  'Angular': FaAngular,
+  'Vue.js': FaVuejs,
+  'Next.js': FaReact,
+  'Gatsby': FaReact,
+  'Nuxt.js': FaVuejs,
+  'Redux': FaReact,
+  'Vuex': FaVuejs,
+  'Tailwind CSS': SiCss3,
+  'Bootstrap': SiCss3,
+  'JQuery': SiJquery,
+};
+
+// TechIcon component to properly render icons
+const TechIcon: React.FC<{ tech: string }> = ({ tech }) => {
+  const IconComponent = techIcons[tech];
+  return IconComponent ? <IconComponent /> : <>🔧</>;
 };
 
 // Hardcode your projects
@@ -117,7 +124,7 @@ const Projects: React.FC = () => {
               <div className="tech-used">
                 {project.techUsed.split(', ').map((tech, i) => (
                   <span key={i} className="tech-badge">
-                    {techIcons[tech] || "🔧"} {tech}
+                    <TechIcon tech={tech} /> {tech}
                   </span>
                 ))}
               </div>
