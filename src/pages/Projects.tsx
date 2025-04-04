@@ -1,7 +1,7 @@
 import React from 'react';
 import './Projects.css';
 import { FaReact, FaNodeJs, FaAws, FaDatabase, FaDocker, FaAngular, FaGithub, FaGitlab, FaGoogle, FaJava, FaJenkins, FaMicrosoft, FaPython, FaVuejs } from 'react-icons/fa';
-import { SiRubyonrails, SiPostgresql, SiMongodb, SiMaterialdesign, SiHtml5, SiCss3, SiJquery, SiAwsamplify, SiFirebase, SiTerraform, SiArgo } from 'react-icons/si';
+import { SiRubyonrails,SiVercel, SiMysql,SiPostgresql, SiMongodb, SiMaterialdesign, SiHtml5, SiCss3, SiJquery, SiAwsamplify, SiFirebase, SiTerraform, SiArgo } from 'react-icons/si';
 import { GrDeploy, GrKubernetes } from "react-icons/gr";
 
 // Hardcode your project images (add these to src/images/)
@@ -13,11 +13,13 @@ import triviaTitansImage from '../images/atomic_habits.jpg';
 
 // Create a type-safe tech icons mapping
 const techIcons: Record<string, React.ComponentType> = {
-  "ReactJS": FaReact,
+  "React.js": FaReact,
   "NodeJS": FaNodeJs,
   "AWS": FaAws,
+  "Vercel": SiVercel,
   "PostgreSQL": SiPostgresql,
   "MongoDB": SiMongodb,
+  "SQL": SiMysql,
   "Ruby On Rails": SiRubyonrails,
   "Material UI": SiMaterialdesign,
   "HTML5": SiHtml5,
@@ -76,8 +78,15 @@ const projects = [
   {
     title: "Vessel Tracking & Sustainability Dashboard",
     description: "Developed a company-wide dashboard to track vessels coated by the company, enabling real-time monitoring and operational insights. Includes a dedicated page for sustainability metrics showing tons of CO2 saved.",
-    techUsed: "React.js, Express.js, SQL, AWS S3",
+    techUsed: "React.js, Express.js, SQL, AWS S3, Vercel",
     image: { url: vesselTrackingImage }
+  },
+  {
+    title: "Task Management App",
+    description: "Full-stack task management application with drag-and-drop functionality, user authentication, and real-time updates. Built with modern web technologies and deployed on cloud platforms.",
+    techUsed: "React.js, Node.js, Express.js, MongoDB, Vercel",
+    image: { url: vesselTrackingImage },
+    githubLink: "https://github.com/yourusername/task-manager" // Add your repo link
   },
   {
     title: "Sales Analysis",
