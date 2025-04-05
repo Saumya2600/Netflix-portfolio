@@ -7,10 +7,7 @@ import { GrDeploy, GrKubernetes } from "react-icons/gr";
 // Hardcode your project images (add these to src/images/)
 import vesselTrackingImage from '../images/git-dash.png';
 import taskmanagerImage from '../images/task-manage.png';
-import salesAnalysisImage from '../images/allmeno.png';
-import maskWatchImage from '../images/chris.jpg';
-import pawPalsImage from '../images/Hotelcalifornia.jpg';
-import triviaTitansImage from '../images/atomic_habits.jpg';
+import pawPalsImage from '../images/petpals.png';
 
 // Create a type-safe tech icons mapping
 const techIcons: Record<string, React.ComponentType> = {
@@ -93,13 +90,13 @@ const projects = [
     title: "Sales Analysis",
     description: "Developed interactive sales dashboards in Microsoft Power BI to visualize financial performance and product sales across geographic regions over the past decade.",
     techUsed: "Microsoft Power BI, SQL",
-    image: { url: salesAnalysisImage }
+    image: { url: "https://portfolio-xi-wine-71.vercel.app/images/website-img-1.jpg" }
   },
   {
     title: "Mask Watch",
     description: "Built a serverless application using AWS services to analyze images for individuals wearing face masks, with automated image processing and label generation.",
     techUsed: "AWS Lambda, AWS Rekognition, AWS S3, Python",
-    image: { url: maskWatchImage }
+    image: { url: "https://portfolio-xi-wine-71.vercel.app/images/website-img-2.webp" }
   },
   {
     title: "PawPals",
@@ -111,7 +108,7 @@ const projects = [
     title: "Trivia Titans",
     description: "Developed an engaging online quiz game with a dynamic game lobby, real-time leaderboard, and user-friendly interface for organizing and playing quizzes.",
     techUsed: "AWS Lambda, React, DynamoDB, API Gateway",
-    image: { url: triviaTitansImage }
+    image: { url: "https://portfolio-xi-wine-71.vercel.app/images/website-img-3.jpg" }
   }
 ];
 
