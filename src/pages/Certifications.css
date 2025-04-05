@@ -49,6 +49,8 @@
   transform: translateY(50px) rotate(-2deg) scale(0.95); /* Subtle rotation and scale */
   animation: cardFadeIn 0.6s forwards ease-in-out;
   animation-delay: var(--delay); /* Staggered animation for grid layout */
+  width: 280px; /* Fixed width for all cards */
+  min-height: 180px; /* Fixed height to ensure uniformity */
 }
 
 .certification-card:hover {
@@ -60,6 +62,8 @@
   text-align: left;
   display: flex;
   flex-direction: column;
+  flex: 1; /* Ensure content takes up available space */
+  overflow: hidden; /* Prevent overflow from affecting card size */
 }
 
 .certification-icon {
@@ -72,16 +76,39 @@
   font-size: 1.5rem;
   color: #e50914; /* Netflix red */
   transition: transform 0.2s ease;
+  align-self: flex-start; /* Align the link icon to the top */
 }
 
 .certification-card:hover .certification-link {
   transform: scale(1.2);
 }
 
+.certification-content h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  white-space: normal; /* Allow text to wrap */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Add ellipsis for overflow */
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical; /* Vertical box orientation for multi-line truncation */
+}
+
+.certification-content p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  white-space: nowrap; /* Prevent issuer from wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Add ellipsis for overflow */
+}
+
 .issued-date {
   font-size: 0.85rem;
   color: #888;
   margin-top: 0.5rem;
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Add ellipsis for overflow */
 }
 
 /* Background animation */
