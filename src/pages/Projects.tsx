@@ -5,7 +5,8 @@ import { SiRubyonrails,SiVercel, SiMysql,SiPostgresql, SiMongodb, SiMaterialdesi
 import { GrDeploy, GrKubernetes } from "react-icons/gr";
 
 // Hardcode your project images (add these to src/images/)
-import vesselTrackingImage from '../images/alchemist.jpg';
+import vesselTrackingImage from '../images/git-dash.png';
+import taskmanagerImage from '../images/task-manage.png';
 import salesAnalysisImage from '../images/allmeno.png';
 import maskWatchImage from '../images/chris.jpg';
 import pawPalsImage from '../images/Hotelcalifornia.jpg';
@@ -85,7 +86,7 @@ const projects = [
     title: "Task Management App",
     description: "Full-stack task management application with drag-and-drop functionality, user authentication, and real-time updates. Built with modern web technologies and deployed on cloud platforms.",
     techUsed: "React.js, Node.js, Express.js, MongoDB, Vercel",
-    image: { url: vesselTrackingImage },
+    image: { url: taskmanagerImage },
     githubLink: "https://github.com/yourusername/task-manager" // Add your repo link
   },
   {
