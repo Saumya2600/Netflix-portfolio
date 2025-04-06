@@ -1,24 +1,32 @@
 import React from 'react';
 import './Reading.css';
-import atomicHabits from '../images/chris.jpg';
-import richDadPoorDad from '../images/rich_dad_poor_dad.jpg';
 import alchemist from '../images/alchemist.jpg';
-import eatThatFrog from '../images/eat_that_frog.jpg';
-import vijayanikiAidhuMetlu from '../images/vijayaniki_aidu_metlu.jpg';
-import venneloAdapilla from '../images/vennelo_adapilla.jpeg';
+import ric from '../images/rich_dad_poor_dad.jpg';
+import kill from '../images/kill.png';
+import book1 from '../images/1984.png';
+import pride from '../images/pride.png';
+import gita from '../images/bhagwadgita.png';
+import great from '../images/great.png';
+import bhavai from '../images/bhavai.png';
 
 const books = [
   {
-    title: "Atomic Habits",
-    author: "James Clear",
-    imgSrc: atomicHabits,
-    description: "A practical guide to building good habits and breaking bad ones.",
+    title: "Pride and Prejudice",
+    author: "Jane Austen",
+    imgSrc: pride, // Placeholder path, replace with actual import
+    description: "A classic romance exploring love, class, and societal expectations.",
   },
   {
-    title: "Rich Dad Poor Dad",
-    author: "Robert Kiyosaki",
-    imgSrc: richDadPoorDad,
-    description: "An eye-opener on wealth, assets, and financial literacy.",
+    title: "To Kill a Mockingbird",
+    author: "Harper Lee",
+    imgSrc: kill, // Placeholder path, replace with actual import
+    description: "A powerful tale of racial injustice and moral growth in the American South.",
+  },
+  {
+    title: "1984",
+    author: "George Orwell",
+    imgSrc: book1, // Placeholder path, replace with actual import
+    description: "A dystopian classic on surveillance, totalitarianism, and freedom.",
   },
   {
     title: "The Alchemist",
@@ -27,22 +35,31 @@ const books = [
     description: "A magical journey of following one's dreams.",
   },
   {
-    title: "Eat That Frog",
-    author: "Brian Tracy",
-    imgSrc: eatThatFrog,
-    description: "A motivational book on overcoming procrastination.",
+    title: "Rich Dad Poor Dad",
+    author: "Robert Kiyosaki",
+    imgSrc: ric, // Placeholder path, replace with actual import
+    description: "An eye-opener on wealth, assets, and financial literacy.",
+    
   },
   {
-    title: "Vijayaniki Aidhu Metlu",
-    author: "Yandamoori Veerendranath",
-    imgSrc: vijayanikiAidhuMetlu,
-    description: "An inspirational Telugu book for personal growth.",
+    title: "Manvini Bhavai",
+    author: "Pannalal Patel",
+    imgSrc: bhavai, // Placeholder path, replace with actual import
+    description: "A classic Gujarati novel depicting the struggles of rural life and famine.",
+    lang: "gu", // For Gujarati styling
   },
   {
-    title: "Vennelo Adapilla",
-    author: "Yandamoori Veerendranath",
-    imgSrc: venneloAdapilla,
-    description: "A classic Telugu romantic novel that touches the heart.",
+    title: "The Great Gatsby",
+    author: "F. Scott Fitzgerald",
+    imgSrc: great, // Placeholder path, replace with actual import
+    description: "A tale of wealth, ambition, and the American Dream in the Jazz Age.",
+  },
+  {
+    title: "Bhagavad Gita",
+    author: "Traditional (Vyasa)",
+    imgSrc: gita, // Placeholder path, replace with actual import
+    description: "A sacred Hindu scripture offering profound philosophical and spiritual insights.",
+    lang: "sa", // For Sanskrit styling
   },
 ];
 
@@ -59,7 +76,9 @@ const Reading: React.FC = () => {
             <div key={index} className="book-card" style={{ '--delay': `${index * 0.1}s` } as React.CSSProperties}>
               <img src={book.imgSrc} alt={book.title} className="book-cover" onError={() => console.log(`Failed to load image for ${book.title}`)} />
               <div className="book-info">
-                <h3 className="book-title">{book.title}</h3>
+                <h3 className="book-title" lang={book.lang || "en"}>
+                  {book.title}
+                </h3>
                 <h4 className="book-author">{book.author}</h4>
                 <p className="book-description">{book.description}</p>
               </div>

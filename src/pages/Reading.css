@@ -1,5 +1,8 @@
 /* Reading.css */
 
+/* Import Google Fonts for Gujarati and Sanskrit */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&family=Noto+Sans+Gujarati:wght@400;700&display=swap');
+
 .reading-container {
   padding: 5rem 2rem;
   text-align: center;
@@ -8,13 +11,13 @@
   color: #fff;
   animation: backgroundShift 10s ease-in-out infinite;
   min-height: 100vh;
-  position: relative; /* Ensure positioning context for children */
-  z-index: 1; /* Ensure the container is above any background elements */
+  position: relative;
+  z-index: 1;
 }
 
 .reading-title {
   font-size: 2.5rem;
-  color: #ff6f61; /* Matches the red color in the screenshot */
+  color: #ff6f61;
   font-weight: bold;
   margin-bottom: 0.5rem;
   animation: slideDown 0.8s ease-in-out;
@@ -23,7 +26,7 @@
 
 .reading-intro {
   font-size: 1.1rem;
-  color: #ccc; /* Lighter color for better contrast on dark background */
+  color: #ccc;
   margin-bottom: 2rem;
 }
 
@@ -33,48 +36,49 @@
   gap: 1.5rem;
   width: 100%;
   max-width: 1000px;
-  margin: 0 auto; /* Center the grid */
-  position: relative; /* Ensure the grid is positioned correctly */
-  z-index: 2; /* Ensure the grid is above any background elements */
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .book-card {
-  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background for contrast */
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: fadeInUp 0.5s ease forwards;
-  animation-delay: var(--delay); /* Use the delay from the component */
+  animation-delay: var(--delay);
   opacity: 0;
   cursor: pointer;
-  position: relative; /* Ensure the card is positioned correctly */
-  z-index: 3; /* Ensure the card is above any background elements */
-  width: 200px; /* Fixed width for uniformity */
-  min-height: 400px; /* Fixed height for uniformity */
+  position: relative;
+  z-index: 3;
+  width: 200px;
+  min-height: 400px;
 }
 
 .book-card:hover {
-  transform: translateY(-10px) scale(1.05); /* Combine translate and scale for a better hover effect */
-  box-shadow: 0 6px 15px rgba(211, 29, 29, 0.4); /* Red shadow to match the theme */
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 6px 15px rgba(211, 29, 29, 0.4);
 }
 
 .book-cover {
   width: 100%;
-  height: 200px; /* Fixed height for the image */
+  height: 200px;
   object-fit: cover;
-  border-radius: 5px 5px 0 0; /* Rounded corners only on top */
-  display: block; /* Ensure the image is visible */
+  border-radius: 5px 5px 0 0;
+  display: block;
 }
 
 .book-info {
   padding: 1rem;
   text-align: center;
+  flex: 1;
 }
 
 .book-title {
   font-size: 1.2rem;
-  color: #fff; /* White for better contrast on dark background */
+  color: #fff;
   margin: 0.5rem 0;
   white-space: normal;
   overflow: hidden;
@@ -86,14 +90,13 @@
 
 .book-author {
   font-size: 1rem;
-  color: #888; /* Lighter gray for contrast */
-  margin-bottom: 1rem;
+  color: #888;
+  margin-bottom: 0.5rem;
 }
 
 .book-description {
   font-size: 0.9rem;
-  color: #ccc; /* Lighter color for contrast */
-  transition: color 0.3s ease;
+  color: #ccc;
   white-space: normal;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -102,14 +105,16 @@
   -webkit-box-orient: vertical;
 }
 
-.book-card:hover .book-description {
-  color: #ff6f61; /* Red on hover to match the theme */
+/* Gujarati books */
+.book-title:lang(gu) {
+  font-family: 'Noto Sans Gujarati', sans-serif;
+  color: #4a90e2;
 }
 
-/* Telugu books */
-.book-title:lang(te) {
-  font-family: 'Noto Sans Telugu', sans-serif;
-  color: #4a90e2; /* Blue for Telugu titles */
+/* Sanskrit books (Bhagavad Gita) */
+.book-title:lang(sa) {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  color: #f1c40f; /* Gold color to reflect the sacred nature */
 }
 
 /* Background animation */
@@ -119,11 +124,11 @@
   100% { background-position: 0% 50%; }
 }
 
-/* Fade-in animation for cards */
-@keyframes fadeInUp {
+/* Slide-down animation for title */
+@keyframes slideDown {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(-20px);
   }
   100% {
     opacity: 1;
@@ -131,11 +136,11 @@
   }
 }
 
-/* Slide-down animation for title */
-@keyframes slideDown {
+/* Fade-in animation for cards */
+@keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(20px);
   }
   100% {
     opacity: 1;
