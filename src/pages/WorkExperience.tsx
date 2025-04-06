@@ -6,14 +6,13 @@ import { IoSchool as SchoolIcon } from 'react-icons/io5';
 import { FaStar as StarIcon } from 'react-icons/fa';
 import './WorkExperience.css';
 
-// Hardcode Saumya Shah's work experience and education timeline
 const timeLineData = [
   {
     timelineType: "work",
     title: "Full Stack Developer",
     name: "Graphite Innovation & Technology",
     dateRange: "Jan 2024 - Mar 2025",
-    techStack: "React.js, Express.js, AWS, PostgreSQL, MySQL, Python",
+    techStack: "React.js, Express.js, AWS, PostgreSQL, MySQL, Python, Vercel",
     summaryPoints: "Developed a company-wide dashboard for real-time data visualization using React.js and Express.js, hosted on AWS Cloud. Performed vessel analysis with Python scripts for data cleaning and analysis. Managed relational databases with optimized queries and automated data workflows."
   },
   {
@@ -28,7 +27,7 @@ const timeLineData = [
     title: "Associate Software Engineer",
     name: "Accenture Solutions Pvt. Ltd.",
     dateRange: "Nov 2021 - Sep 2022",
-    techStack: "Java",
+    techStack: "Java,MySQL",
     summaryPoints: "Contributed to project tasks using Java programming. Collaborated with cross-functional teams in an agile environment to deliver high-quality solutions. Gained experience in agile methodologies and best practices for software development."
   },
   {

@@ -84,7 +84,7 @@ const projects = [
     description: "Full-stack task management application with drag-and-drop functionality, user authentication, and real-time updates. Built with modern web technologies and deployed on cloud platforms.",
     techUsed: "React.js, Node.js, Express.js, MongoDB, Vercel",
     image: { url: taskmanagerImage },
-    githubLink: "https://github.com/yourusername/task-manager" // Add your repo link
+    githubLink: "https://task-manager-front-orcin.vercel.app/login" // Add your repo link
   },
   {
     title: "Sales Analysis",

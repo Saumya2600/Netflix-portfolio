@@ -3,6 +3,7 @@ import './Skills.css';
 import { CgCPlusPlus } from "react-icons/cg";
 import { IoLogoHtml5 } from "react-icons/io";
 import { MdCss } from "react-icons/md";
+import { IoLogoJavascript } from "react-icons/io5";
 import { DiRedis } from "react-icons/di";
 import { TbBrandReactNative } from "react-icons/tb";
 import { VscAzure,VscVscode } from "react-icons/vsc";
@@ -14,6 +15,7 @@ import { SiRubyonrails,SiVercel ,SiPostman ,SiMongodb ,SiTypescript ,SiAmazondyn
 const iconMap: { [key: string]: JSX.Element } = {
   SiRubyonrails: <SiRubyonrails />,
   FaNode: <FaNode />,
+  IoLogoJavascript: <IoLogoJavascript />,
   SiVercel: <SiVercel  />,
   TbBrandReactNative: <TbBrandReactNative />,
   CgCPlusPlus: <CgCPlusPlus />,
@@ -58,7 +60,7 @@ const skillsData = [
     category: "Programming Languages",
     name: "JavaScript",
     description: "Experienced in building dynamic web applications and APIs.",
-    icon: "FaNode" // Using Node.js icon as a proxy for JavaScript
+    icon: "IoLogoJavascript" // Using Node.js icon as a proxy for JavaScript
   },
   {
     category: "Programming Languages",
