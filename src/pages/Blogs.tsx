@@ -1,42 +1,60 @@
 import React from 'react';
-import { SiMedium, SiDevdotto } from 'react-icons/si'; // Corrected imports
+import './Blogs.css';
 
 const blogsData = [
   {
-    title: "Make Your Rails Console Look Better",
-    platform: "Medium",
-    icon: <SiMedium />,
-    link: "https://medium.com/@chintusamala96/make-your-rails-console-look-better-510988d40566",
-    description: "Learn tips to customize your Rails console for a better experience.",
+    title: "Recreating Shopify’s BFCM Globe Using react-globe.gl",
+    platform: "The New Stack",
+    link: "https://thenewstack.io/recreating-shopifys-bfcm-globe-using-react-globe-gl/",
+    description: "A tutorial on recreating Shopify's 3D Thanksgiving globe using the react-globe.gl library for globe data visualization.",
   },
   {
-    title: "Docker Fundas - My Version",
-    platform: "Medium",
-    icon: <SiMedium />,
-    link: "https://medium.com/@chintusamala96/docker-fundas-my-version-7b9262bd90d4",
-    description: "An introductory guide to Docker fundamentals from my perspective.",
+    title: "Build A Stunning Generative AI App with a React IDE",
+    platform: "Catalins.tech",
+    link: "https://catalins.tech/build-a-stunning-generative-ai-app-with-a-react-ide",
+    description: "A guide on building a generative AI application that creates images from user prompts using React and a visual IDE.",
   },
   {
-    title: "Grape Gem in Ruby on Rails: Handling User Model and API Endpoint",
-    platform: "Dev.to",
-    icon: <SiDevdotto />,
-    link: "https://dev.to/samalasumanth0262/grape-gem-in-ruby-on-rails-handling-user-model-and-api-endpoint-g6d",
-    description: "A guide to using the Grape gem for API development in Ruby on Rails.",
+    title: "Turbocharging React with WebAssembly",
+    platform: "OpenReplay Blog",
+    link: "https://blog.openreplay.com/turbocharging-react-with-webassembly",
+    description: "An article exploring how to integrate WebAssembly with React to enhance performance in front-end applications.",
+  },
+  {
+    title: "React + AI Stack for 2025",
+    platform: "Builder.io",
+    link: "https://www.builder.io/blog/react-ai-stack-2025",
+    description: "An overview of React and AI tools for developers in 2025, including AI-assisted development options like Visual Copilot for generating React code from Figma designs.",
+  },
+  {
+    title: "Building Web Apps with React, WebAssembly, and Go",
+    platform: "Medium",
+    link: "https://medium.com/@akshayspatel/building-web-apps-with-react-webassembly-and-go-lang-6c3377b5a20e",
+    description: "A tutorial on integrating WebAssembly with React using Go, highlighting the performance benefits of Wasm in web applications.",
   },
 ];
 
 const Blogs: React.FC = () => {
   return (
-    <div>
-      <h1>Blogs</h1>
-      {blogsData.map((blog, index) => (
-        <div key={index}>
-          <h2>{blog.title}</h2>
-          <p>{blog.platform} {blog.icon}</p>
-          <a href={blog.link} target="_blank" rel="noopener noreferrer">Read More</a>
-          <p>{blog.description}</p>
-        </div>
-      ))}
+    <div className="blogs-container">
+      <h1 className="blogs-title">📝 Blogs That Inspire Me</h1>
+      <p className="blogs-intro">A collection of insightful articles on React-globe, generative AI, and WebAssembly with React that I find inspiring.</p>
+      <div className="blogs-list">
+        {blogsData.length > 0 ? (
+          blogsData.map((blog, index) => (
+            <div key={index} className="blog-card" style={{ '--delay': `${index * 0.1}s` } as React.CSSProperties}>
+              <h2 className="blog-title">{blog.title}</h2>
+              <p className="blog-platform">{blog.platform}</p>
+              <a href={blog.link} target="_blank" rel="noopener noreferrer" className="blog-link">
+                Read More
+              </a>
+              <p className="blog-description">{blog.description}</p>
+            </div>
+          ))
+        ) : (
+          <p>No blogs available.</p>
+        )}
+      </div>
     </div>
   );
 };
