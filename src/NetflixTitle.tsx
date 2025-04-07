@@ -7,10 +7,10 @@ const NetflixTitle = () => {
   const [isClicked, setIsClicked] = useState(false);
   const navigate = useNavigate();
 
-  const handlePlaySound = () => {
+  const handleGetStarted = () => {
     const audio = new Audio(netflixSound);
     audio.play().catch(error => console.error("Audio play error:", error));
-    setIsClicked(true); // Starts animation after clickings
+    setIsClicked(true); // Starts the title animation
   };
 
   useEffect(() => {
@@ -23,10 +23,16 @@ const NetflixTitle = () => {
   }, [isClicked, navigate]);
 
   return (
-    <div className="netflix-container" onClick={handlePlaySound}>
+    <div className="netflix-container">
       <h1 className={`netflix-title ${isClicked ? 'animate' : ''}`}>
         Saumya Shah
       </h1>
+      <button
+        className="get-started-button"
+        onClick={handleGetStarted}
+      >
+        Get Started
+      </button>
     </div>
   );
 };

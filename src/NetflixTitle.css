@@ -1,44 +1,71 @@
-  .netflix-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #141414;
-    overflow: hidden;
-  }
+/* NetflixTitle.css */
 
-  .netflix-title {
-    font-size: 5rem; /* Adjust size to match the original logo's appearance */
-    font-family: 'Bebas Neue', sans-serif; /* Netflix uses a bold font like Bebas Neue; you can adjust this */
-    font-weight: 700;
-    color: #e50914; /* Netflix red */
-    letter-spacing: 2px; /* Add some spacing for a logo-like feel */
-    text-transform: uppercase; /* Match the all-caps style of the original */
-    opacity: 0;
+/* Import Bebas Neue font for consistency */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.netflix-container {
+  display: flex;
+  flex-direction: column; /* Stack the title and button vertically */
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #141414;
+  overflow: hidden;
+}
+
+.netflix-title {
+  font-size: 5rem; /* Adjust size to match the original logo's appearance */
+  font-family: 'Bebas Neue', sans-serif; /* Netflix uses a bold font like Bebas Neue */
+  font-weight: 700;
+  color: #e50914; /* Netflix red */
+  letter-spacing: 2px; /* Add some spacing for a logo-like feel */
+  text-transform: uppercase; /* Match the all-caps style of the original */
+  opacity: 0;
+  transform: scale(0.8);
+  animation: fadeIn 0.5s forwards ease-in;
+  text-align: center;
+  margin: 0; /* Remove default margins for h1 */
+}
+
+.get-started-button {
+  margin-top: 20px; /* Space between title and button */
+  padding: 10px 30px;
+  background-color: #e50914; /* Netflix red */
+  color: #fff; /* White text */
+  font-family: 'Bebas Neue', sans-serif; /* Match the title font */
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0; /* Start hidden */
+  animation: fadeIn 0.5s forwards ease-in 0.2s; /* Fade in with a slight delay after the title */
+  transition: background-color 0.3s ease;
+}
+
+.get-started-button:hover {
+  background-color: #b20710; /* Darker red on hover */
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate.netflix-title {
+  animation: zoomOut 3s forwards ease-in-out;
+}
+
+@keyframes zoomOut {
+  0%, 80% {
     transform: scale(0.8);
-    animation: fadeIn 0.5s forwards ease-in;
-    text-align: center;
-    margin: 0; /* Remove default margins for h1 */
+    opacity: 1;
   }
-
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
+  100% {
+    transform: scale(3);
+    opacity: 0;
   }
-
-  .animate.netflix-title {
-    animation: zoomOut 3s forwards ease-in-out;
-  }
-
-  @keyframes zoomOut {
-    0%, 80% {
-      transform: scale(0.8);
-      opacity: 1;
-    }
-    100% {
-      transform: scale(3);
-      opacity: 0;
-    }
-  }
+}   
