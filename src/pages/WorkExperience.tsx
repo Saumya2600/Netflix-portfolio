@@ -7,6 +7,14 @@ import { FaStar as StarIcon } from 'react-icons/fa';
 import './WorkExperience.css';
 
 const timeLineData = [
+   {
+    timelineType: "work",
+    title: "Associate Generative AI Focused Developer",
+    name: "Davies Group",
+    dateRange: "May 2025 - Present",
+    techStack: "AWS, Python,Typescript,Azure,Terraform,Bedrock", 
+    summaryPoints: "Developed generative AI applications leveraging AWS, Python, and TypeScript with Bedrock for LLM integration and Terraform for infrastructure management. Built full-stack solutions utilizing agentic AI systems and knowledge graphs to automate decision-making and integrate structured/unstructured data. Collaborated with senior developers and architects on coding, debugging, and testing to enhance application functionality and seamless AI integration."
+  },
   {
     timelineType: "work",
     title: "Full Stack Developer",
