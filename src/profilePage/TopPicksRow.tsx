@@ -2,11 +2,9 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './TopPicksRow.css';
 import { 
-  FaPassport, 
   FaCode, 
   FaBriefcase, 
   FaCertificate, 
-  FaHandsHelping, 
   FaProjectDiagram, 
   FaEnvelope, 
   FaMusic, 
