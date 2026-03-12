@@ -9,7 +9,7 @@ import { TbBrandReactNative } from "react-icons/tb";
 import { VscAzure,VscVscode } from "react-icons/vsc";
 import { AiOutlineConsoleSql } from "react-icons/ai";
 import { FaReact, FaPython, FaNode,FaGit,FaAngular,FaNodeJs, FaAws,FaJenkins, FaDocker, FaJava,FaMicrosoft,FaJira } from 'react-icons/fa';
-import { SiRubyonrails,SiVercel ,SiPostman ,SiMongodb ,SiTypescript ,SiAmazondynamodb , SiPostgresql, SiMysql, SiKubernetes, SiGooglecloud, SiSpringboot, SiPhp, SiNetlify, SiHeroku, SiCss3, SiRabbitmq, SiImessage,SiTableau } from 'react-icons/si';
+import { SiRubyonrails,SiVercel ,SiPostman ,SiMongodb ,SiTypescript ,SiAmazondynamodb , SiPostgresql, SiMysql, SiKubernetes, SiGooglecloud, SiSpringboot, SiPhp, SiNetlify, SiHeroku, SiRabbitmq, SiImessage,SiTableau } from 'react-icons/si';
 
 
 const iconMap: { [key: string]: JSX.Element } = {
