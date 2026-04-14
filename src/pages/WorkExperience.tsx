@@ -81,6 +81,13 @@ const WorkExperience: React.FC = () => {
                 : { borderRight: '7px solid rgb(255, 224, 230)' }
             }
             date={item.dateRange}
+            dateClassName={
+              item.timelineType === "work"
+                ? index === 0
+                  ? "date-dark-bg"
+                  : "date-light-bg"
+                : "date-light-bg"
+            }
             iconStyle={
               item.timelineType === "work"
                 ? { background: 'rgb(33, 150, 243)', color: '#fff' }

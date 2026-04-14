@@ -9,6 +9,8 @@
   position: fixed;
   width: 100%;
   top: 0;
+  left: 0;
+  box-sizing: border-box;
   background-image: linear-gradient(180deg, rgb(0 0 1 / 90%) 10%, transparent 100%);
   padding: 20px;
   z-index: 3;
@@ -90,8 +92,9 @@
   }
 
   .profile-icon {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
+    margin-right: 0;
   }
 
   /* Hide Navbar Links in Mobile */
@@ -103,6 +106,11 @@
   .hamburger {
     display: block;
     cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-right: 15px;
+    outline: none;
   }
 
   .hamburger div {
